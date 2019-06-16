@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class OracleConnection implements AutoCloseable  {
+public class OracleConnection implements AutoCloseable {
     private Connection connection;
 
     public OracleConnection() throws BankAccountException {
@@ -25,10 +25,14 @@ public class OracleConnection implements AutoCloseable  {
     }
 
     public void close() {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("connection is null");
         }
     }
 

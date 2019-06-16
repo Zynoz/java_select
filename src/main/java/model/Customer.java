@@ -1,21 +1,22 @@
 package model;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Customer {
-    private int customer_id;
+    private long customer_id;
     private String email;
     private String firstName;
     private String lastName;
-    private char gender;
-    private Date birthDate;
+    private String gender;
+    private LocalDate birthDate;
     private double credits;
 
     public Customer() {
 
     }
 
-    public Customer(int customer_id, String email, String firstName, String lastName, char gender, Date birthDate, double credits) {
+    public Customer(long customer_id, String email, String firstName, String lastName, String gender, LocalDate birthDate, double credits) {
         this.customer_id = customer_id;
         this.email = email;
         this.firstName = firstName;
@@ -25,11 +26,11 @@ public class Customer {
         this.credits = credits;
     }
 
-    public int getCustomer_id() {
+    public long getCustomer_id() {
         return customer_id;
     }
 
-    public void setCustomer_id(int customer_id) {
+    public void setCustomer_id(long customer_id) {
         this.customer_id = customer_id;
     }
 
@@ -57,19 +58,19 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
